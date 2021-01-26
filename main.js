@@ -19,24 +19,33 @@ const buttons = [
 const tasks = [];
 let index = 0;
 
+const editTask = () => {
+  console.log("edit");
+};
+
+const markTaskAsDone = () => {
+  console.log("done");
+};
+
+const deleteTask = () => {
+  console.log("delete");
+};
+
 const taskButtons = (task) => {
-  // const deleteBtn = document.createElement("button");
-  // const doneBtn = document.createElement("button");
-  // const editBtn = document.createElement("button");
-  // deleteBtn.classList.add("deleteBtn");
-  // doneBtn.classList.add("doneBtn");
-  // editBtn.classList.add("editBtn");
-  // deleteBtn.textContent = "Delete task";
-  // doneBtn.textContent = "Mark as done";
-  // editBtn.textContent = "Edit task";
-  // task.appendChild(deleteBtn);
-  // task.appendChild(doneBtn);
-  // task.appendChild(editBtn);
   for (i = 0; i < buttons.length; i++) {
     const button = document.createElement("button");
     button.classList.add(`${buttons[i].name}`);
     button.textContent = `${buttons[i].text}`;
     task.appendChild(button);
+    button.addEventListener("click", () => {
+      if (button.className === "editBtn") {
+        editTask();
+      } else if (button.className === "doneBtn") {
+        markTaskAsDone();
+      } else if (button.className === "deleteBtn") {
+        deleteTask();
+      }
+    });
   }
 };
 
