@@ -1,4 +1,5 @@
 const addBtn = document.querySelector(".add_task_btn");
+const doneTasks = document.querySelector(".done_tasks");
 const input = document.querySelector(".input");
 const tasksList = document.querySelector(".tasks");
 

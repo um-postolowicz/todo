@@ -1,3 +1,84 @@
-body {
-  font-family: arial;
+@import url("https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Chakra Petch", sans-serif;
+  font-size: 10px;
+}
+
+.wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+header {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 30vh;
+  border-bottom: 1px solid #ddd;
+}
+
+header .title {
+  font-family: "Londrina Solid", cursive;
+  font-size: 5rem;
+  letter-spacing: 2px;
+}
+
+header .add_task {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+}
+
+header .input {
+  height: 3.3rem;
+  flex-basis: 50%;
+  font-size: 1.8rem;
+  border-radius: 15px 0 0 15px;
+  border-right: none;
+}
+
+header .add_task_btn {
+  width: 100px;
+  height: 3.3rem;
+  font-size: 1.8rem;
+  border-radius: 0 15px 15px 0;
+  border-left: none;
+  cursor: pointer;
+}
+
+main.tasks_wrapper {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 4rem 1fr;
+}
+
+main.tasks_wrapper h2 {
+  font-size: 2rem;
+  line-height: 2;
+}
+
+main.tasks_wrapper ul {
+  list-style: none;
+  color: white;
+}
+
+main.tasks_wrapper ul li {
+  font-size: 1.8rem;
+}
+
+ul.tasks {
+  background-color: blue;
+  height: 50vh;
+}
+
+ul.done_tasks {
+  background-color: blueviolet;
 }
