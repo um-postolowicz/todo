@@ -20,33 +20,38 @@ const buttons = [
 const tasks = [];
 const doneTasks = [];
 
-// let index = 0;
-
-const editTask = () => {
-  console.log("edit");
+const editTask = (e, task) => {
+  e.preventDefault();
+  e.target.parentNode.innerHTML =
+    "<input type='text' class='input_edit'> <button class='button_edit'>Accept</button>";
+  const editInput = document.querySelector(".input_edit");
+  document.querySelector(".button_edit").addEventListener("click", () => {
+    task.textContent = editInput.value;
+    taskButtons(task);
+  });
 };
 
 const markTaskAsDone = (e) => {
   e.preventDefault();
-  const index = e.target.parentNode.id;
-  const doneTask = tasks.splice(index, 1);
-  let newDoneTask = document.createElement("li");
-  newDoneTask = doneTask[0];
-  console.log(newDoneTask);
-  newDoneTask.classList.remove("task");
-  newDoneTask.classList.add("done_task");
-  doneTasks.push(newDoneTask);
-  doneTasksList.textContent = "";
-  doneTasks.forEach((onetask, index) => {
-    onetask.id = index;
-    doneTasksList.appendChild(onetask);
-  });
-  tasksList.textContent = "";
-  tasks.forEach((onetask, index) => {
-    onetask.id = index;
-    tasksList.appendChild(onetask);
-  });
-  doneTasksList.appendChild(newDoneTask);
+  // const index = e.target.parentNode.id;
+  // const doneTask = tasks.splice(index, 1);
+  // let newDoneTask = document.createElement("li");
+  // newDoneTask = doneTask[0];
+  // console.log(newDoneTask);
+  // newDoneTask.classList.remove("task");
+  // newDoneTask.classList.add("done_task");
+  // doneTasks.push(newDoneTask);
+  // doneTasksList.textContent = "";
+  // doneTasks.forEach((onetask, index) => {
+  //   onetask.id = index;
+  //   doneTasksList.appendChild(onetask);
+  // });
+  // tasksList.textContent = "";
+  // tasks.forEach((onetask, index) => {
+  //   onetask.id = index;
+  //   tasksList.appendChild(onetask);
+  // });
+  // doneTasksList.appendChild(newDoneTask);
 };
 
 const deleteTask = (e) => {
@@ -68,7 +73,7 @@ const taskButtons = (task) => {
     task.appendChild(button);
     button.addEventListener("click", (e) => {
       if (button.className === "editBtn") {
-        editTask();
+        editTask(e, task);
       } else if (button.className === "doneBtn") {
         markTaskAsDone(e);
       } else if (button.className === "deleteBtn") {
