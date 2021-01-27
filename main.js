@@ -1,5 +1,5 @@
 const addBtn = document.querySelector(".add_task_btn");
-const doneTasks = document.querySelector(".done_tasks");
+const doneTasksList = document.querySelector(".done_tasks");
 const input = document.querySelector(".input");
 const tasksList = document.querySelector(".tasks");
 
@@ -18,7 +18,9 @@ const buttons = [
   },
 ];
 const tasks = [];
-let index = 0;
+const doneTasks = [];
+
+// let index = 0;
 
 const editTask = () => {
   console.log("edit");
@@ -28,8 +30,16 @@ const markTaskAsDone = () => {
   console.log("done");
 };
 
-const deleteTask = () => {
-  console.log("delete");
+const deleteTask = (e) => {
+  e.target.parentNode.remove();
+  const index = e.target.parentNode.id;
+  tasks.splice(index, 1);
+  tasksList.textContent = "";
+  console.log(tasks);
+  tasks.forEach((onetask, index) => {
+    onetask.id = index;
+    tasksList.appendChild(onetask);
+  });
 };
 
 const taskButtons = (task) => {
@@ -38,29 +48,34 @@ const taskButtons = (task) => {
     button.classList.add(`${buttons[i].name}`);
     button.textContent = `${buttons[i].text}`;
     task.appendChild(button);
-    button.addEventListener("click", () => {
+    button.addEventListener("click", (e) => {
       if (button.className === "editBtn") {
         editTask();
       } else if (button.className === "doneBtn") {
         markTaskAsDone();
       } else if (button.className === "deleteBtn") {
-        deleteTask();
+        deleteTask(e);
       }
     });
   }
 };
 
 const addTask = (e) => {
-  index = index + 1;
   e.preventDefault();
   const newTask = input.value;
-  tasks.push(newTask);
   const task = document.createElement("li");
   task.textContent = newTask;
   task.classList.add("task");
-  task.id = index;
+  // task.id = index;
+  tasks.push(task);
+  tasksList.textContent = "";
+  tasks.forEach((onetask, index) => {
+    onetask.id = index;
+    tasksList.appendChild(onetask);
+  });
   tasksList.appendChild(task);
   taskButtons(task);
+  // index = index + 1;
   input.value = "";
 };
 
