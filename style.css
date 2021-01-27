@@ -1,6 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300&display=swap");
 
+:root {
+  --blue-color: #30cfd0;
+  --purple-color: #330867;
+  --light-purple-color: #8527f8;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -10,7 +16,11 @@
 }
 
 body {
-  background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+  background-image: linear-gradient(
+    to top,
+    var(--blue-color) 0%,
+    var(--purple-color) 100%
+  );
   background-repeat: no-repeat;
   min-height: 100vh;
   height: 100%;
@@ -76,7 +86,7 @@ header .input {
 
 header .input:focus {
   outline: none;
-  border: 2px solid #30cfd0;
+  border: 2px solid var(--blue-color);
 }
 
 header .add_task_btn {
@@ -85,7 +95,7 @@ header .add_task_btn {
   font-size: 1.8rem;
   border-radius: 0 15px 15px 0;
   border: 2px solid transparent;
-  background-color: #330867;
+  background-color: var(--purple-color);
   color: white;
   font-weight: bold;
   letter-spacing: 1px;
@@ -94,7 +104,7 @@ header .add_task_btn {
 }
 
 header .add_task_btn:hover {
-  background-color: #30cfd0;
+  background-color: var(--blue-color);
   color: black;
 }
 
@@ -133,7 +143,7 @@ main.tasks_wrapper ul li button {
   flex-basis: 24%;
   padding: 2px;
   font-size: 1.6rem;
-  border: 1px solid #30cfd0;
+  border: 1px solid var(--blue-color);
   border-radius: 8px;
   background-color: transparent;
   color: white;
@@ -142,7 +152,7 @@ main.tasks_wrapper ul li button {
 }
 
 main.tasks_wrapper ul li button:hover {
-  background-color: #30cfd0;
+  background-color: var(--blue-color);
   color: black;
 }
 
@@ -158,11 +168,11 @@ main.tasks_wrapper ul li button.deleteBtn_done:hover {
 }
 
 main.tasks_wrapper ul li button.button_edit {
-  border-color: #8527f8;
+  border-color: var(--light-purple-color);
 }
 
 main.tasks_wrapper ul li button.button_edit:hover {
-  background-color: #8527f8;
+  background-color: var(--light-purple-color);
   color: white;
 }
 
@@ -176,7 +186,7 @@ main.tasks_wrapper ul li button.button_edit:hover {
 
 .input_edit:focus {
   outline: none;
-  border: 2px solid #8527f8;
+  border: 2px solid var(--light-purple-color);
 }
 .priority {
   color: #ff6a61;
