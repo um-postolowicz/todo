@@ -21,6 +21,14 @@ const buttons = [
 const tasks = [];
 const doneTasks = [];
 
+const clearAndShowList = (list, table) => {
+  list.textContent = "";
+  table.forEach((onetask, index) => {
+    onetask.id = index;
+    list.appendChild(onetask);
+  });
+};
+
 const editTask = (e, task) => {
   e.preventDefault();
   e.target.parentNode.innerHTML =
@@ -44,18 +52,9 @@ const markTaskAsDone = (e) => {
   newDoneTask.classList.remove("task");
   newDoneTask.classList.add("done_task");
   doneTasks.push(newDoneTask);
-  doneTasksList.textContent = "";
-  doneTasks.forEach((onetask, index) => {
-    onetask.id = index;
-    doneTasksList.appendChild(onetask);
-  });
+  clearAndShowList(doneTasksList, doneTasks);
   doneTasksList.appendChild(newDoneTask);
-  tasksList.textContent = "";
-  tasks.forEach((onetask, index) => {
-    onetask.id = index;
-    tasksList.appendChild(onetask);
-  });
-
+  clearAndShowList(tasksList, tasks);
   document
     .querySelector(".deleteBtn_done")
     .addEventListener("click", deleteTask);
@@ -66,20 +65,12 @@ const deleteTask = (e) => {
     e.target.parentNode.remove();
     const index = e.target.parentNode.id;
     tasks.splice(index, 1);
-    tasksList.textContent = "";
-    tasks.forEach((onetask, index) => {
-      onetask.id = index;
-      tasksList.appendChild(onetask);
-    });
+    clearAndShowList(tasksList, tasks);
   } else if (e.target.className === "deleteBtn_done") {
     e.target.parentNode.remove();
     const index = e.target.parentNode.id;
     doneTasks.splice(index, 1);
-    doneTasksList.textContent = "";
-    doneTasks.forEach((onetask, index) => {
-      onetask.id = index;
-      doneTasksList.appendChild(onetask);
-    });
+    clearAndShowList(doneTasksList, doneTasks);
   }
 };
 
@@ -112,11 +103,7 @@ const addTask = (e) => {
     task.classList.add("priority");
   }
   tasks.push(task);
-  tasksList.textContent = "";
-  tasks.forEach((onetask, index) => {
-    onetask.id = index;
-    tasksList.appendChild(onetask);
-  });
+  clearAndShowList(tasksList, tasks);
   tasksList.appendChild(task);
   taskButtons(task);
   input.value = "";
