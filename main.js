@@ -26,8 +26,27 @@ const editTask = () => {
   console.log("edit");
 };
 
-const markTaskAsDone = () => {
-  console.log("done");
+const markTaskAsDone = (e) => {
+  e.preventDefault();
+  const index = e.target.parentNode.id;
+  const doneTask = tasks.splice(index, 1);
+  let newDoneTask = document.createElement("li");
+  newDoneTask = doneTask[0];
+  console.log(newDoneTask);
+  newDoneTask.classList.remove("task");
+  newDoneTask.classList.add("done_task");
+  doneTasks.push(newDoneTask);
+  doneTasksList.textContent = "";
+  doneTasks.forEach((onetask, index) => {
+    onetask.id = index;
+    doneTasksList.appendChild(onetask);
+  });
+  tasksList.textContent = "";
+  tasks.forEach((onetask, index) => {
+    onetask.id = index;
+    tasksList.appendChild(onetask);
+  });
+  doneTasksList.appendChild(newDoneTask);
 };
 
 const deleteTask = (e) => {
@@ -35,7 +54,6 @@ const deleteTask = (e) => {
   const index = e.target.parentNode.id;
   tasks.splice(index, 1);
   tasksList.textContent = "";
-  console.log(tasks);
   tasks.forEach((onetask, index) => {
     onetask.id = index;
     tasksList.appendChild(onetask);
@@ -52,7 +70,7 @@ const taskButtons = (task) => {
       if (button.className === "editBtn") {
         editTask();
       } else if (button.className === "doneBtn") {
-        markTaskAsDone();
+        markTaskAsDone(e);
       } else if (button.className === "deleteBtn") {
         deleteTask(e);
       }
@@ -66,7 +84,6 @@ const addTask = (e) => {
   const task = document.createElement("li");
   task.textContent = newTask;
   task.classList.add("task");
-  // task.id = index;
   tasks.push(task);
   tasksList.textContent = "";
   tasks.forEach((onetask, index) => {
@@ -75,7 +92,6 @@ const addTask = (e) => {
   });
   tasksList.appendChild(task);
   taskButtons(task);
-  // index = index + 1;
   input.value = "";
 };
 
