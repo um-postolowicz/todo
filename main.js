@@ -32,26 +32,24 @@ const editTask = (e, task) => {
 };
 
 const markTaskAsDone = (e) => {
-  e.preventDefault();
-  // const index = e.target.parentNode.id;
-  // const doneTask = tasks.splice(index, 1);
-  // let newDoneTask = document.createElement("li");
-  // newDoneTask = doneTask[0];
-  // console.log(newDoneTask);
-  // newDoneTask.classList.remove("task");
-  // newDoneTask.classList.add("done_task");
-  // doneTasks.push(newDoneTask);
-  // doneTasksList.textContent = "";
-  // doneTasks.forEach((onetask, index) => {
-  //   onetask.id = index;
-  //   doneTasksList.appendChild(onetask);
-  // });
-  // tasksList.textContent = "";
-  // tasks.forEach((onetask, index) => {
-  //   onetask.id = index;
-  //   tasksList.appendChild(onetask);
-  // });
-  // doneTasksList.appendChild(newDoneTask);
+  const index = e.target.parentNode.id;
+  const doneTask = tasks.splice(index, 1)[0];
+  const newDoneTask = document.createElement("li");
+  newDoneTask.textContent = doneTask.textContent;
+  newDoneTask.classList.remove("task");
+  newDoneTask.classList.add("done_task");
+  doneTasks.push(newDoneTask);
+  doneTasksList.textContent = "";
+  doneTasks.forEach((onetask, index) => {
+    onetask.id = index;
+    doneTasksList.appendChild(onetask);
+  });
+  doneTasksList.appendChild(newDoneTask);
+  tasksList.textContent = "";
+  tasks.forEach((onetask, index) => {
+    onetask.id = index;
+    tasksList.appendChild(onetask);
+  });
 };
 
 const deleteTask = (e) => {
