@@ -35,7 +35,10 @@ const markTaskAsDone = (e) => {
   const index = e.target.parentNode.id;
   const doneTask = tasks.splice(index, 1)[0];
   const newDoneTask = document.createElement("li");
-  newDoneTask.textContent = doneTask.textContent;
+  console.log(doneTask);
+  newDoneTask.innerHTML =
+    doneTask.firstChild.data +
+    "<button class='deleteBtn_done'>Delete task</button>";
   newDoneTask.classList.remove("task");
   newDoneTask.classList.add("done_task");
   doneTasks.push(newDoneTask);
@@ -50,17 +53,32 @@ const markTaskAsDone = (e) => {
     onetask.id = index;
     tasksList.appendChild(onetask);
   });
+
+  document
+    .querySelector(".deleteBtn_done")
+    .addEventListener("click", deleteTask);
 };
 
 const deleteTask = (e) => {
-  e.target.parentNode.remove();
-  const index = e.target.parentNode.id;
-  tasks.splice(index, 1);
-  tasksList.textContent = "";
-  tasks.forEach((onetask, index) => {
-    onetask.id = index;
-    tasksList.appendChild(onetask);
-  });
+  if (e.target.className === "deleteBtn") {
+    e.target.parentNode.remove();
+    const index = e.target.parentNode.id;
+    tasks.splice(index, 1);
+    tasksList.textContent = "";
+    tasks.forEach((onetask, index) => {
+      onetask.id = index;
+      tasksList.appendChild(onetask);
+    });
+  } else if (e.target.className === "deleteBtn_done") {
+    e.target.parentNode.remove();
+    const index = e.target.parentNode.id;
+    doneTasks.splice(index, 1);
+    doneTasksList.textContent = "";
+    doneTasks.forEach((onetask, index) => {
+      onetask.id = index;
+      doneTasksList.appendChild(onetask);
+    });
+  }
 };
 
 const taskButtons = (task) => {
