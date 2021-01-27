@@ -1,4 +1,5 @@
 const addBtn = document.querySelector(".add_task_btn");
+const checkbox = document.querySelector(".checkbox");
 const doneTasksList = document.querySelector(".done_tasks");
 const input = document.querySelector(".input");
 const tasksList = document.querySelector(".tasks");
@@ -26,6 +27,7 @@ const editTask = (e, task) => {
     "<input type='text' class='input_edit' placeholder='Edit task'> <button class='button_edit'>Accept</button>";
   const editInput = document.querySelector(".input_edit");
   document.querySelector(".button_edit").addEventListener("click", () => {
+    if (editInput.value === "") return;
     task.textContent = editInput.value;
     taskButtons(task);
   });
@@ -102,9 +104,13 @@ const taskButtons = (task) => {
 const addTask = (e) => {
   e.preventDefault();
   const newTask = input.value;
+  if (newTask === "") return;
   const task = document.createElement("li");
   task.textContent = newTask;
   task.classList.add("task");
+  if (checkbox.checked) {
+    task.classList.add("priority");
+  }
   tasks.push(task);
   tasksList.textContent = "";
   tasks.forEach((onetask, index) => {

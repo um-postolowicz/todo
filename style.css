@@ -53,6 +53,17 @@ header .add_task {
   width: 70%;
 }
 
+header .checkbox {
+  height: 1.5rem;
+  width: 1.5rem;
+  margin-right: 10px;
+}
+
+header .checkbox_label {
+  font-size: 1.6rem;
+  margin-right: 20px;
+}
+
 header .input {
   height: 3.3rem;
   flex-basis: 50%;
@@ -166,4 +177,8 @@ main.tasks_wrapper ul li button.button_edit:hover {
 .input_edit:focus {
   outline: none;
   border: 2px solid #8527f8;
+}
+.priority {
+  color: #ff6a61;
+  font-weight: bold;
 }
