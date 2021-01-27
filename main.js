@@ -23,7 +23,7 @@ const doneTasks = [];
 const editTask = (e, task) => {
   e.preventDefault();
   e.target.parentNode.innerHTML =
-    "<input type='text' class='input_edit'> <button class='button_edit'>Accept</button>";
+    "<input type='text' class='input_edit' placeholder='Edit task'> <button class='button_edit'>Accept</button>";
   const editInput = document.querySelector(".input_edit");
   document.querySelector(".button_edit").addEventListener("click", () => {
     task.textContent = editInput.value;
