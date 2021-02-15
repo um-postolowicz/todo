@@ -16,25 +16,22 @@
 }
 
 body {
-  background-image: linear-gradient(
-    to top,
-    var(--blue-color) 0%,
-    var(--purple-color) 100%
-  );
+  background: rgb(51, 8, 103);
+  background: linear-gradient(
+      180deg,
+      var(--purple-color) 0%,
+      var(--blue-color) 100%
+    )
+    fixed;
   background-repeat: no-repeat;
-  min-height: 100vh;
-  height: 100%;
-  position: relative;
+  background-size: cover;
+  min-height: calc(100vh - 60px);
 }
 
 .wrapper {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   max-width: 1200px;
   width: 1200px;
-  margin: 0 auto;
+  margin: 60px auto 60px;
   background-color: #000;
   border-radius: 30px;
   min-height: 85vh;
@@ -79,7 +76,7 @@ header .input {
   flex-basis: 50%;
   font-size: 1.8rem;
   padding-left: 10px;
-  border: 2px solid transparent;
+  border: 2px solid var(--purple-color);
   border-radius: 15px 0 0 15px;
   border-right: none;
 }
@@ -106,6 +103,10 @@ header .add_task_btn {
 header .add_task_btn:hover {
   background-color: var(--blue-color);
   color: black;
+}
+
+header .add_task_btn:focus {
+  outline: none;
 }
 
 main.tasks_wrapper {
@@ -156,6 +157,10 @@ main.tasks_wrapper ul li button:hover {
   color: black;
 }
 
+main.tasks_wrapper ul li button.editBtn {
+  margin-left: 40px;
+}
+
 main.tasks_wrapper ul li button.deleteBtn,
 main.tasks_wrapper ul li button.deleteBtn_done {
   border-color: red;
@@ -176,7 +181,11 @@ main.tasks_wrapper ul li button.button_edit:hover {
   color: white;
 }
 
-.deleteBtn_done .input_edit {
+main.tasks_wrapper ul li button.button_edit:focus {
+  outline: none;
+}
+
+.input_edit {
   width: 40%;
   height: 2.6rem;
   font-size: 1.6rem;

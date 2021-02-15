@@ -1,0 +1,274 @@
+@media (max-width: 1280px) and (orientation: portrait) {
+  body {
+    min-height: calc(100vh - 100px);
+  }
+  header {
+    height: 19vh;
+  }
+  .wrapper {
+    width: 80vw;
+    margin: 100px auto;
+  }
+  main.tasks_wrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: 4rem 1fr 4rem 1fr;
+    height: 100%;
+  }
+  main.tasks_wrapper h2.done_tasks_title {
+    grid-row-start: 3;
+  }
+}
+
+@media (max-width: 1280px) and (orientation: landscape) {
+  .wrapper {
+    width: 90vw;
+  }
+}
+
+@media (max-width: 1024px) and (orientation: portrait) {
+  body {
+    min-height: calc(100vh - 100px);
+  }
+  .wrapper {
+    margin: 100px auto;
+    width: 80vw;
+    min-height: 80vh;
+  }
+
+  header {
+    height: 20vh;
+  }
+
+  main.tasks_wrapper {
+    grid-template-columns: 1fr;
+    grid-template-rows: 4rem 1fr 4rem 1fr;
+    height: 100%;
+  }
+
+  main.tasks_wrapper h2.done_tasks_title {
+    grid-row-start: 3;
+  }
+}
+
+@media (max-width: 1024px) and (orientation: landscape) {
+  body {
+    height: 100vh;
+  }
+
+  .wrapper {
+    width: 80vw;
+  }
+
+  main.tasks_wrapper ul li button {
+    font-size: 1.4rem;
+    flex-basis: 25%;
+  }
+
+  main.tasks_wrapper ul li button.editBtn {
+    margin-left: 15px;
+  }
+
+  .input_edit {
+    width: 60%;
+  }
+}
+
+@media (max-width: 768px) and (orientation: portrait) {
+  header .add_task {
+    width: 90%;
+  }
+}
+
+@media (max-width: 812px) and (orientation: landscape) {
+  body {
+    min-height: calc(100vh - 30px);
+  }
+  .wrapper {
+    margin: 30px auto;
+    height: 70vh;
+  }
+  header .title {
+    font-size: 3rem;
+  }
+  header .add_task {
+    width: 80%;
+  }
+  header .checkbox {
+    height: 1.2rem;
+    width: 1.2rem;
+  }
+  header .checkbox_label {
+    font-size: 1.4rem;
+  }
+  header .input {
+    height: 2.7rem;
+    font-size: 1.4rem;
+  }
+  header .add_task_btn {
+    height: 2.7rem;
+    font-size: 1.4rem;
+  }
+  main.tasks_wrapper {
+    grid-template-columns: 70% 30%;
+    grid-template-rows: 2.5rem 1fr;
+  }
+  main.tasks_wrapper h2 {
+    font-size: 1.6rem;
+  }
+  main.tasks_wrapper ul li {
+    font-size: 1.4rem;
+  }
+  main.tasks_wrapper ul li button {
+    font-size: 1.3rem;
+  }
+  main.tasks_wrapper ul li button.editBtn {
+    margin-left: 10px;
+  }
+  main.tasks_wrapper ul li button.deleteBtn_done {
+    flex-basis: 50%;
+  }
+}
+
+@media (max-width: 640px) and (orientation: landscape) {
+  body {
+    min-height: calc(100vh - 20px);
+  }
+  .wrapper {
+    margin: 20px auto 0;
+  }
+  header .checkbox_label {
+    font-size: 1.1rem;
+  }
+  main.tasks_wrapper h2 {
+    font-size: 1.3rem;
+  }
+  main.tasks_wrapper ul li button {
+    font-size: 1.2rem;
+  }
+  .input_edit {
+    height: 2.3rem;
+    font-size: 1.4rem;
+  }
+}
+
+/*iPhone media query*/
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+  body {
+    min-height: calc(100vh - 200px);
+  }
+  .wrapper {
+    margin: 40px auto 0;
+    height: 88vh;
+  }
+  header {
+    height: 15vh;
+  }
+  header .title {
+    font-size: 3em;
+  }
+
+  header .checkbox_label {
+    font-size: 1.3rem;
+  }
+
+  header .input {
+    width: 40%;
+    height: 2.5rem;
+    font-size: 1.3rem;
+  }
+  header .add_task_btn {
+    height: 2.5rem;
+    font-size: 1.3rem;
+  }
+  main.tasks_wrapper {
+    height: 70vh;
+  }
+  main.tasks_wrapper h2 {
+    font-size: 1.5rem;
+  }
+  main.tasks_wrapper ul li {
+    font-size: 1.3rem;
+  }
+  main.tasks_wrapper ul li button {
+    font-size: 1.2rem;
+  }
+  .input_edit {
+    height: 2.4rem;
+    width: 50%;
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 360px) and (orientation: portrait) {
+  body {
+    min-height: calc(100vh - 30px);
+  }
+  .wrapper {
+    margin: 30px auto;
+    height: 90vh;
+  }
+  header .title {
+    font-size: 2.5rem;
+  }
+  header .add_task {
+    width: 90%;
+  }
+  header .checkbox_label {
+    font-size: 1rem;
+  }
+  header .input {
+    height: 2rem;
+    width: 50%;
+    font-size: 1.2rem;
+  }
+  header .add_task_btn {
+    height: 2rem;
+    font-size: 1.1rem;
+  }
+  main.tasks_wrapper h2 {
+    font-size: 1.5rem;
+  }
+  main.tasks_wrapper {
+    height: 75%;
+    grid-template-rows: 3.5rem 1fr 3.5rem 1fr;
+  }
+  .input_edit {
+    height: 2rem;
+    font-size: 1.2rem;
+  }
+  main.tasks_wrapper ul li {
+    font-size: 1.2rem;
+  }
+  main.tasks_wrapper ul li button {
+    font-size: 1rem;
+    flex-basis: 25%;
+  }
+  main.tasks_wrapper ul li button.editBtn {
+    margin-left: 10px;
+  }
+}
+/*iPhone media query*/
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+  header {
+    height: 18vh;
+  }
+  header .title {
+    font-size: 2rem;
+  }
+  main.tasks_wrapper {
+    grid-template-rows: 2.5rem 1fr 2.5rem 1fr;
+  }
+  main.tasks_wrapper h2 {
+    font-size: 1.2rem;
+  }
+  main.tasks_wrapper ul li {
+    font-size: 1.1rem;
+  }
+  main.tasks_wrapper ul li button {
+    font-size: 0.9rem;
+  }
+  .input_edit {
+    height: 1.8rem;
+    font-size: 1.2rem;
+  }
+}
