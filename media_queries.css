@@ -1,7 +1,7 @@
 @media (max-width: 1280px) and (orientation: portrait) {
-  body {
+  /* body {
     min-height: calc(100vh - 100px);
-  }
+  } */
   header {
     height: 19vh;
   }
@@ -26,9 +26,9 @@
 }
 
 @media (max-width: 1024px) and (orientation: portrait) {
-  body {
+  /* body {
     min-height: calc(100vh - 100px);
-  }
+  } */
   .wrapper {
     margin: 100px auto;
     width: 80vw;
@@ -51,9 +51,9 @@
 }
 
 @media (max-width: 1024px) and (orientation: landscape) {
-  body {
+  /* body {
     height: 100vh;
-  }
+  } */
 
   .wrapper {
     width: 80vw;
@@ -80,9 +80,9 @@
 }
 
 @media (max-width: 812px) and (orientation: landscape) {
-  body {
+  /* body {
     min-height: calc(100vh - 30px);
-  }
+  } */
   .wrapper {
     margin: 30px auto;
     height: 70vh;
@@ -129,33 +129,11 @@
   }
 }
 
-@media (max-width: 640px) and (orientation: landscape) {
-  body {
-    min-height: calc(100vh - 20px);
-  }
-  .wrapper {
-    margin: 20px auto 0;
-  }
-  header .checkbox_label {
-    font-size: 1.1rem;
-  }
-  main.tasks_wrapper h2 {
-    font-size: 1.3rem;
-  }
-  main.tasks_wrapper ul li button {
-    font-size: 1.2rem;
-  }
-  .input_edit {
-    height: 2.3rem;
-    font-size: 1.4rem;
-  }
-}
-
 /*iPhone media query*/
 @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
-  body {
+  /* body {
     min-height: calc(100vh - 200px);
-  }
+  } */
   .wrapper {
     margin: 40px auto 0;
     height: 88vh;
@@ -199,10 +177,42 @@
   }
 }
 
-@media (max-width: 360px) and (orientation: portrait) {
-  body {
-    min-height: calc(100vh - 30px);
+@media (max-width: 640px) and (orientation: landscape) {
+  /* body {
+    min-height: calc(100vh - 20px);
+  } */
+  .wrapper {
+    margin: 20px auto;
   }
+  header {
+    height: 25vh;
+  }
+  header .title {
+    font-size: 2rem;
+  }
+  header .checkbox_label {
+    font-size: 1.1rem;
+  }
+  header .input,
+  header .add_task_btn {
+    height: 2rem;
+  }
+  main.tasks_wrapper h2 {
+    font-size: 1.3rem;
+  }
+  main.tasks_wrapper ul li button {
+    font-size: 1.2rem;
+  }
+  .input_edit {
+    height: 2.3rem;
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 360px) and (orientation: portrait) {
+  /* body {
+    min-height: calc(100vh - 30px);
+  } */
   .wrapper {
     margin: 30px auto;
     height: 90vh;
