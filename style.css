@@ -25,8 +25,8 @@ body {
     fixed;
   background-repeat: no-repeat;
   background-size: cover;
-  /* min-height: calc(100vh - 60px); */
   min-height: 500px;
+  height: calc(100vh - 60px);
 }
 
 .wrapper {
