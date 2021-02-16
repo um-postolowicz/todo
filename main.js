@@ -4,6 +4,16 @@ const doneTasksList = document.querySelector(".done_tasks");
 const input = document.querySelector(".input");
 const tasksList = document.querySelector(".tasks");
 
+setTimeout(() => {
+  let height = window.innerHeight;
+  let width = window.innerWidth;
+  let viewport = document.querySelector("meta[name=viewport]");
+  viewport.setAttribute(
+    "content",
+    "height=" + height + "px, width=" + width + "px, initial-scale=1.0"
+  );
+}, 300);
+
 const buttons = [
   {
     name: "editBtn",
